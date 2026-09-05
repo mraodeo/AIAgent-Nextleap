@@ -1,0 +1,22 @@
+{
+  "themes": [
+    "Negative: KYC Verification Failures - Users consistently report being stuck on the video KYC step, experiencing crashes or infinite loading screens, preventing them from opening accounts.",
+    "Negative: Delayed Customer Support - High volume of complaints regarding automated chatbot loops and unhelpful responses when trying to resolve money withdrawal issues.",
+    "Positive: Seamless UI/UX for Stocks - Users praise the clean, minimalist interface for tracking mutual funds and buying stocks, noting it is much faster than competitors."
+  ],
+  "quotes": [
+    "Been trying to complete video KYC for 3 days. The app just crashes every time the camera opens. Very frustrating.",
+    "Support is useless. Just a bot sending the same article link. I need to know why my withdrawal is pending for 48 hours!",
+    "Best app for beginners. Super clean design, buying mutual funds takes literally 10 seconds. Love the portfolio tracking."
+  ],
+  "actions": [
+    "Investigate Video KYC crash logs on Android devices; optimize camera memory usage and add fallback offline verification.",
+    "Implement an SLA for human-agent handover in support chat when users use keywords like 'stuck', 'withdrawal', or 'failed'.",
+    "Capitalize on UI praise by highlighting the speed of mutual fund investments in the upcoming marketing campaign."
+  ],
+  "metrics": {
+    "total_reviews": 12450,
+    "sentiment_score": 78,
+    "rating": 4.6
+  }
+}

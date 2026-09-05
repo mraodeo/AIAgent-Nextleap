@@ -3,6 +3,7 @@ import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 import asyncio
+import json
 from dotenv import load_dotenv
 
 from src.scraper.play_store import fetch_groww_reviews
@@ -44,13 +45,23 @@ async def run_pulse_agent(weeks_back: int = 8, max_count: int = 300):
     print(markdown_report)
     print("----------------------\n")
     
-    print("[3/4] Appending report to Google Docs via MCP...")
+    print("[3/5] Saving structured JSON for Frontend...")
+    # Ensure frontend/public directory exists
+    frontend_dir = os.path.join(os.path.dirname(__file__), '..', 'frontend', 'public')
+    os.makedirs(frontend_dir, exist_ok=True)
+    json_path = os.path.join(frontend_dir, 'data.json')
+    
+    with open(json_path, 'w', encoding='utf-8') as f:
+        f.write(pulse_report.model_dump_json(indent=2))
+    print(f"✅ Saved data.json to {json_path}\n")
+    
+    print("[4/5] Appending report to Google Docs via MCP...")
     # Provide the raw markdown to the docs client, ensuring it is formatted for appending
     append_text = f"\n\n--- Pulse Report generated on ---\n\n{markdown_report}"
     docs_result = await append_to_docs.ainvoke({"markdown_content": append_text})
     print(f"✅ Docs Result: {docs_result}\n")
     
-    print("[4/4] Drafting notification email via MCP...")
+    print("[5/5] Drafting notification email via MCP...")
     # Summarize the themes for the email body
     summary = "\n".join([f"- {theme}" for theme in pulse_report.themes])
     email_result = await draft_pulse_email.ainvoke({"summary": summary})
