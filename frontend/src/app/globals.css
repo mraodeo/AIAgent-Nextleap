@@ -1,127 +1,83 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Colors */
-  --color-background: #08090e;
-  --color-foreground: #f8fafc;
-  --color-muted: #94a3b8;
-  --color-faint: #475569;
+  /* Slate & Champagne Premium Palette */
+  --color-bg-base: #0B0F19; /* Deep navy/slate */
+  --color-bg-surface: #111827; /* Gray 900 */
+  --color-bg-elevated: #1F2937; /* Gray 800 */
   
-  --color-midnight: #0d0f18;
-  --color-glass-base: rgba(13, 15, 24, 0.65);
-  --color-glass-raised: rgba(22, 27, 44, 0.75);
+  --color-text-primary: #F9FAFB;
+  --color-text-secondary: #9CA3AF;
+  --color-text-tertiary: #6B7280;
   
-  --color-cyan-primary: #00f2fe;
-  --color-cyan-secondary: #4facfe;
-  --color-violet-primary: #9b51e0;
-  --color-violet-secondary: #e94057;
-  --color-emerald-primary: #00f5a0;
-  --color-emerald-secondary: #00d9f5;
+  --color-border-subtle: rgba(255, 255, 255, 0.08);
+  --color-border-strong: rgba(255, 255, 255, 0.15);
   
-  --color-border-normal: rgba(255, 255, 255, 0.08);
-  --color-border-highlight: rgba(0, 242, 254, 0.35);
-  --color-border-violet: rgba(155, 81, 224, 0.35);
+  --color-accent-champagne: #FBBF24; /* Elegant Gold */
+  --color-accent-champagne-dim: rgba(251, 191, 36, 0.1);
   
-  --color-positive-bg: rgba(0, 245, 160, 0.12);
-  --color-positive-border: rgba(0, 245, 160, 0.3);
-  --color-positive-text: #00f5a0;
+  --color-accent-sage: #34D399; /* Soft Success Green */
+  --color-accent-sage-dim: rgba(52, 211, 153, 0.1);
   
-  --color-neutral-bg: rgba(155, 81, 224, 0.12);
-  --color-neutral-border: rgba(155, 81, 224, 0.3);
-  --color-neutral-text: #c084fc;
-  
-  --color-alert-bg: rgba(233, 64, 87, 0.12);
-  --color-alert-border: rgba(233, 64, 87, 0.35);
-  --color-alert-text: #f87171;
+  --color-accent-rose: #FB7185; /* Soft Error/Red */
 
   /* Fonts */
-  --font-display: var(--font-plus-jakarta-sans), sans-serif;
-  --font-body: var(--font-inter), sans-serif;
+  --font-mono: var(--font-jetbrains-mono), monospace;
+  --font-sans: var(--font-inter), sans-serif;
 }
 
 body {
-  background: var(--color-background);
-  color: var(--color-foreground);
-  font-family: var(--font-body);
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  
+  /* Very subtle noise/gradient instead of grid */
+  background-image: radial-gradient(circle at 50% 0%, #172033 0%, transparent 70%);
+  background-attachment: fixed;
 }
 
-/* Glassmorphism Utilities */
-.glass-panel {
-  background: var(--color-glass-base);
-  backdrop-filter: blur(20px) saturate(160%);
-  border: 1px solid var(--color-border-normal);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+/* Elegant Bento Box Cards */
+.exec-card {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 16px; /* softer edges */
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
 }
 
-.glass-hover {
-  transition: all 0.3s ease;
-}
-.glass-hover:hover {
-  background: var(--color-glass-raised);
-  backdrop-filter: blur(24px) saturate(180%);
-  border-top-color: rgba(0, 242, 254, 0.4);
-  border-bottom-color: rgba(255, 255, 255, 0.05);
-  border-left-color: rgba(255, 255, 255, 0.05);
-  border-right-color: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.6), 0 0 24px rgba(0, 242, 254, 0.12);
+.exec-card:hover {
+  border-color: var(--color-border-strong);
 }
 
-.btn-executive {
-  background: linear-gradient(135deg, var(--color-cyan-primary), var(--color-cyan-secondary));
-  color: #08090e;
-  font-weight: 600;
-  box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
-  transition: all 0.2s ease;
-}
-.btn-executive:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 24px rgba(0, 242, 254, 0.6);
+.exec-card-header {
+  border-bottom: 1px solid var(--color-border-subtle);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.02), transparent);
 }
 
-/* Typography styles based on DESIGN.md */
-.text-display-lg {
-  font-family: var(--font-display);
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 56px;
-  letter-spacing: -0.03em;
+/* Typography Overrides */
+.text-mono-data {
+  font-family: var(--font-mono);
+  font-feature-settings: "tnum" 1;
 }
 
-.text-headline-xl {
-  font-family: var(--font-display);
-  font-size: 36px;
-  font-weight: 600;
-  line-height: 44px;
-  letter-spacing: -0.02em;
+/* Scrollbar styling for executive look */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
 }
-
-.text-headline-md {
-  font-family: var(--font-display);
-  font-size: 22px;
-  font-weight: 600;
-  line-height: 30px;
-  letter-spacing: -0.01em;
+::-webkit-scrollbar-track {
+  background: var(--color-bg-base);
 }
-
-.text-headline-sm {
-  font-family: var(--font-display);
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 26px;
+::-webkit-scrollbar-thumb {
+  background: var(--color-bg-elevated);
+  border-radius: 3px;
 }
-
-.text-data-metric {
-  font-family: var(--font-display);
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 36px;
-  letter-spacing: -0.02em;
-}
-
-.text-label-sm {
-  font-size: 11px;
-  font-weight: 600;
-  line-height: 14px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-tertiary);
 }
