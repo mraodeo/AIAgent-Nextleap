@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><title>Review Pulse AI</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#121318;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-surface-variant": "#b9cacb", "surface-container-high": "#292a2f", "on-tertiary-container": "#006e45", "on-tertiary-fixed-variant": "#005232", "on-tertiary-fixed": "#002111", "surface-tint": "#00dce6", "primary": "#e0fdff", "surface-container-lowest": "#0d0e13", "tertiary": "#e0ffe8", "on-primary-container": "#006a70", "tertiary-fixed-dim": "#00e293", "surface-bright": "#38393f", "secondary": "#deb7ff", "surface-container-low": "#1a1b21", "secondary-fixed": "#f0dbff", "on-tertiary": "#003921", "on-surface": "#e3e1e9", "on-primary-fixed": "#002022", "surface-container": "#1e1f25", "outline": "#849495", "tertiary-container": "#16f9a4", "on-primary": "#00373a", "secondary-container": "#670fac", "surface": "#121318", "on-primary-fixed-variant": "#004f53", "secondary-fixed-dim": "#deb7ff", "on-secondary": "#4a007f", "surface-container-highest": "#34343a", "surface-variant": "#34343a", "primary-fixed": "#6ff6ff", "primary-container": "#00f2fe", "background": "#121318", "on-error": "#690005", "error-container": "#93000a", "on-background": "#e3e1e9", "on-error-container": "#ffdad6", "tertiary-fixed": "#50ffaf", "outline-variant": "#3a494b", "inverse-on-surface": "#2f3036", "on-secondary-container": "#d2a0ff", "inverse-primary": "#00696f", "primary-fixed-dim": "#00dce6", "inverse-surface": "#e3e1e9", "on-secondary-fixed": "#2c0050", "error": "#ffb4ab", "on-secondary-fixed-variant": "#670fac", "surface-dim": "#121318" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "gutter-md": "1rem", "gutter-sm": "0.5rem", "gutter-2xl": "3rem", "gutter-xs": "0.25rem", "gutter-xl": "2rem", "gutter-lg": "1.5rem", "layout-margin-desktop": "2.5rem", "layout-margin-tablet": "1.5rem", "layout-margin-mobile": "1rem" }, fontFamily: { "headline-sm": ["Plus Jakarta Sans"], "label-sm": ["Inter"], "label-md": ["Inter"], "headline-xl-mobile": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "body-sm": ["Inter"], "body-lg": ["Inter"], "body-md": ["Inter"], "data-metric": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"] }, fontSize: { "headline-sm": ["18px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "500" }], "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }], "data-metric": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }] } } } };</script></head><body class="bg-surface text-on-surface min-h-screen flex flex-col relative selection:bg-primary-container selection:text-on-primary-container"><div class="fixed inset-0 pointer-events-none z-0 overflow-hidden"><div class="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-primary-container/10 blur-[100px]"></div><div class="absolute top-1/2 -left-32 w-72 h-72 rounded-full bg-secondary-container/15 blur-[90px]"></div><div class="absolute -bottom-24 right-1/4 w-80 h-80 rounded-full bg-tertiary-container/5 blur-[120px]"></div></div><header class="fixed top-0 inset-x-0 z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_4px_24px_rgba(0,0,0,0.5)]"><div class="h-24 px-gutter-md flex flex-col justify-center gap-gutter-xs"><div class="flex items-center justify-between"><div class="flex items-center gap-gutter-sm"><img alt="Review Pulse AI Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1X1R1KtNGeBnLKJhD-VsT0mQgRiqXVdnNzcM1dmBM9glAMVcid4k11fLRoSKfHVwYBPKF0aa9gv_jbZAlOXeUdq1nKBDOpsVxrkYviiIN5t5UYIS00B6_iEAzLRErOyOX2SqWdFgr-9EhLJQWSwie4SBwvVlCuz5mLyflfxNVSj_HS1Cp58A_KfuLnWsNr0MO-tCRxACMKrR0BuBMObzczurRxikY00Wt_ih21OvUuBOiWmCFBaonUwNaI"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Review Pulse AI</span></div><div class="flex items-center gap-gutter-sm"><button aria-label="Global Search and Filtering" class="w-11 h-11 flex items-center justify-center rounded-full bg-surface-container-high/60 text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]">tune</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div><div class="flex items-center justify-between gap-gutter-sm"><div class="flex items-center gap-gutter-xs"><span class="font-headline-md text-headline-md text-on-surface font-semibold">Dashboard</span></div><div class="flex items-center gap-gutter-xs"><div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary-container/10 text-tertiary-fixed-dim"><span class="w-1.5 h-1.5 rounded-full bg-tertiary-container animate-pulse shadow-[0_0_8px_#16f9a4]"></span><span class="font-label-sm text-label-sm uppercase font-semibold tracking-wider">AI ONLINE</span></div><div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high/70 text-on-surface-variant"><span class="material-symbols-outlined text-[14px]">date_range</span><span class="font-label-sm text-label-sm whitespace-nowrap">Trailing 8W</span></div></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-24 pb-28 bg-surface z-10"><div class="flex flex-col w-full">
+<div class="px-gutter-md pb-gutter-xl flex flex-col gap-gutter-lg">
+<!-- 1. HEADER & EXECUTIVE CONTEXT BAR -->
+<section class="flex flex-col gap-gutter-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-surface-tint text-[16px]">auto_awesome</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Model v4.2 • Autonomous Engine</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary-fixed-dim px-2 py-0.5 rounded-full bg-tertiary-container/10 font-medium">99.4% Precision</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Weekly App Store Intelligence</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Synthesized cross-telemetry across global iOS reviews</span>
+</div>
+<!-- Action Row -->
+<div class="flex items-center gap-gutter-sm mt-1">
+<!-- Date Selector Pill -->
+<div class="flex-1 flex items-center justify-between px-3 py-2.5 rounded-xl bg-surface-container-high/60 backdrop-blur-md shadow-sm active:scale-[0.98] transition-transform cursor-pointer">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-[18px]">calendar_today</span>
+<span class="font-label-md text-label-md text-on-surface font-medium">Trailing 8 Weeks</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">expand_more</span>
+</div>
+<!-- Glowing Primary Action Button -->
+<button class="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-primary-container text-on-primary font-headline-sm text-[13px] font-semibold tracking-normal shadow-[0_0_24px_rgba(0,242,254,0.35)] active:scale-95 transition-all hover:brightness-110" id="export-report-btn">
+<span class="material-symbols-outlined text-[17px]">mail</span>
+<span class="whitespace-nowrap">Export</span>
+</button>
+</div>
+</section>
+<!-- 2. TOP METRICS ROW (3 Glassmorphic KPI Cards) -->
+<section class="flex flex-col gap-gutter-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Core Signals</span>
+<span class="font-label-sm text-label-sm text-primary-fixed-dim">Real-time Stream</span>
+</div>
+<!-- Grid of KPIs (Mobile 1-col / tablet flex) -->
+<div class="grid grid-cols-1 gap-gutter-sm">
+<!-- KPI 1: App Store Rating -->
+<div class="relative overflow-hidden p-4 rounded-xl bg-surface-container/70 backdrop-blur-xl shadow-md flex items-center justify-between">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">App Store Rating</span>
+<div class="flex items-baseline gap-2">
+<span class="font-data-metric text-data-metric text-on-surface">4.6</span>
+<span class="font-body-md text-body-md text-on-surface-variant">/ 5.0</span>
+</div>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[15px]">trending_up</span>
+<span class="font-label-sm text-label-sm text-tertiary-fixed-dim font-medium">+0.2 this week</span>
+</div>
+</div>
+<div class="w-14 h-14 rounded-full bg-surface-container-highest/60 flex items-center justify-center shadow-[0_0_20px_rgba(255,215,0,0.15)]">
+<span class="material-symbols-outlined text-primary-fixed-dim text-[32px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<!-- KPI 2: Reviews Analyzed -->
+<div class="relative overflow-hidden p-4 rounded-xl bg-surface-container/70 backdrop-blur-xl shadow-md flex items-center justify-between">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Reviews Ingested</span>
+<span class="font-data-metric text-data-metric text-on-surface">12,450</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-label-sm text-label-sm text-tertiary-fixed-dim font-medium">+18% vs prev period</span>
+</div>
+</div>
+<!-- Live Sparkline Bar Micro-indicator -->
+<div class="flex items-end gap-1 h-11 px-2.5 py-1.5 rounded-lg bg-surface-container-high/60">
+<span class="w-1.5 bg-primary-container/30 h-3 rounded-full"></span>
+<span class="w-1.5 bg-primary-container/50 h-5 rounded-full"></span>
+<span class="w-1.5 bg-primary-container/40 h-4 rounded-full"></span>
+<span class="w-1.5 bg-primary-container/70 h-7 rounded-full"></span>
+<span class="w-1.5 bg-primary-container/60 h-6 rounded-full"></span>
+<span class="w-1.5 bg-primary-container/90 h-8 rounded-full"></span>
+<span class="w-1.5 bg-primary-container h-10 rounded-full shadow-[0_0_8px_#00f2fe]"></span>
+</div>
+</div>
+<!-- KPI 3: Overall Sentiment -->
+<div class="relative overflow-hidden p-4 rounded-xl bg-surface-container/70 backdrop-blur-xl shadow-md flex items-center justify-between">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Overall Sentiment</span>
+<span class="font-data-metric text-data-metric text-on-surface">78% Pos</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container animate-ping"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">High Confidence (99.4%)</span>
+</div>
+</div>
+<!-- Circular SVG Radial Progress -->
+<div class="relative w-14 h-14 flex items-center justify-center">
+<svg class="w-14 h-14 -rotate-90" viewbox="0 0 56 56">
+<circle cx="28" cy="28" fill="transparent" r="23" stroke="#292a2f" stroke-width="4.5"></circle>
+<circle class="transition-all duration-1000" cx="28" cy="28" fill="transparent" r="23" stroke="url(#kpiGrad)" stroke-dasharray="144.5" stroke-dashoffset="31.8" stroke-linecap="round" stroke-width="4.5"></circle>
+<defs>
+<lineargradient id="kpiGrad" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#00f2fe"></stop>
+<stop offset="100%" stop-color="#16f9a4"></stop>
+</lineargradient>
+</defs>
+</svg>
+<span class="absolute font-headline-sm text-[12px] font-semibold text-on-surface">78%</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. TOP 3 THEMES SECTION (The Core Anchor) -->
+<section class="flex flex-col gap-gutter-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">Top 3 Extracted Themes</span>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-secondary-container/30 text-secondary-fixed">
+<span class="material-symbols-outlined text-[14px]">psychology</span>
+<span class="font-label-sm text-label-sm font-medium">AI Clustered</span>
+</div>
+</div>
+<!-- Theme 1: Critical Negative -->
+<div class="p-4 rounded-xl bg-surface-container/70 backdrop-blur-xl shadow-md flex flex-col gap-2.5 relative overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-[16px] text-on-surface font-semibold">Onboarding Friction</span>
+</div>
+<span class="flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-error-container/40 text-error font-label-sm text-label-sm font-semibold shadow-[0_0_12px_rgba(147,0,10,0.4)]">
+<span class="material-symbols-outlined text-[13px]">warning</span>
+            Critical Negative
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Users dropping off during biometric MFA verification on iOS 17.4+; 42% cite timed-out SMS codes.
+        </p>
+<!-- Accent Meter & Stats -->
+<div class="flex flex-col gap-1.5 pt-1">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Prevalence Weight</span>
+<span class="text-error font-semibold">15% of total volume</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full rounded-full bg-error shadow-[0_0_8px_#ffb4ab]" style="width: 15%;"></div>
+</div>
+</div>
+</div>
+<!-- Theme 2: Feature Request -->
+<div class="p-4 rounded-xl bg-surface-container/70 backdrop-blur-xl shadow-md flex flex-col gap-2.5 relative overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-[16px] text-on-surface font-semibold">Smart Widget Requests</span>
+</div>
+<span class="flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-container/20 text-primary-container font-label-sm text-label-sm font-semibold shadow-[0_0_12px_rgba(0,242,254,0.2)]">
+<span class="material-symbols-outlined text-[13px]">auto_fix_high</span>
+            Feature Request
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Surge in requests for lock screen interactive widgets and Apple Watch complications following competitor update.
+        </p>
+<!-- Accent Meter & Stats -->
+<div class="flex flex-col gap-1.5 pt-1">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Prevalence Weight</span>
+<span class="text-primary-container font-semibold">24% of total volume</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full rounded-full bg-primary-container shadow-[0_0_8px_#00f2fe]" style="width: 24%;"></div>
+</div>
+</div>
+</div>
+<!-- Theme 3: Positive Surge -->
+<div class="p-4 rounded-xl bg-surface-container/70 backdrop-blur-xl shadow-md flex flex-col gap-2.5 relative overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-[16px] text-on-surface font-semibold">Speed &amp; Fluid UI</span>
+</div>
+<span class="flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-tertiary-container/20 text-tertiary-fixed-dim font-label-sm text-label-sm font-semibold shadow-[0_0_12px_rgba(22,249,164,0.25)]">
+<span class="material-symbols-outlined text-[13px]">thumb_up</span>
+            Positive Surge
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Vast praise for recent v3.8 caching upgrade; 68% noted instant portfolio refresh without freezing.
+        </p>
+<!-- Accent Meter & Stats -->
+<div class="flex flex-col gap-1.5 pt-1">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Prevalence Weight</span>
+<span class="text-tertiary-fixed-dim font-semibold">38% of total volume</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full rounded-full bg-tertiary-container shadow-[0_0_8px_#16f9a4]" style="width: 38%;"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. SENTIMENT & VOLUME TREND CHART (8-Week Trend) -->
+<section class="p-4 rounded-xl bg-surface-container/70 backdrop-blur-xl shadow-md flex flex-col gap-3 relative">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-[16px] text-on-surface font-semibold">Sentiment Trajectory</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">8-Week Scope</span>
+</div>
+<!-- Legend -->
+<div class="flex items-center gap-4 mt-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary-container shadow-[0_0_6px_#00f2fe]"></span>
+<span class="font-label-sm text-label-sm text-on-surface">Positive (82% Peak)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-error shadow-[0_0_6px_#ffb4ab]"></span>
+<span class="font-label-sm text-label-sm text-on-surface">Critical (18%)</span>
+</div>
+</div>
+</div>
+<!-- Inline SVG Chart -->
+<div class="relative w-full h-44 mt-1">
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 320 150">
+<defs>
+<!-- Cyan Area Gradient -->
+<lineargradient id="areaPositive" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#00f2fe" stop-opacity="0.32"></stop>
+<stop offset="100%" stop-color="#00f2fe" stop-opacity="0.0"></stop>
+</lineargradient>
+<!-- Crimson Area Gradient -->
+<lineargradient id="areaNegative" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#ffb4ab" stop-opacity="0.22"></stop>
+<stop offset="100%" stop-color="#ffb4ab" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<!-- Horizontal Grid Lines -->
+<line stroke="#292a2f" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="320" y1="20" y2="20"></line>
+<line stroke="#292a2f" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="320" y1="65" y2="65"></line>
+<line stroke="#292a2f" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="320" y1="110" y2="110"></line>
+<!-- Positive Area & Line -->
+<path d="M 0,90 Q 40,82 80,72 T 160,55 T 240,40 T 320,24 L 320,135 L 0,135 Z" fill="url(#areaPositive)"></path>
+<path d="M 0,90 Q 40,82 80,72 T 160,55 T 240,40 T 320,24" fill="none" stroke="#00f2fe" stroke-linecap="round" stroke-width="2.5"></path>
+<!-- Negative Area & Line -->
+<path d="M 0,118 Q 40,112 80,116 T 160,105 T 240,118 T 320,112 L 320,135 L 0,135 Z" fill="url(#areaNegative)"></path>
+<path d="M 0,118 Q 40,112 80,116 T 160,105 T 240,118 T 320,112" fill="none" stroke="#ffb4ab" stroke-dasharray="4 2" stroke-linecap="round" stroke-width="2"></path>
+<!-- Week 8 Highlight Marker -->
+<circle class="shadow-[0_0_10px_#00f2fe]" cx="320" cy="24" fill="#00f2fe" r="4.5" stroke="#121318" stroke-width="2"></circle>
+<circle cx="320" cy="112" fill="#ffb4ab" r="3.5" stroke="#121318" stroke-width="1.5"></circle>
+</svg>
+<!-- Simulated Tooltip Float at Week 8 -->
+<div class="absolute right-0 top-0 -translate-y-2 p-2 rounded-lg bg-surface-container-highest/95 backdrop-blur-xl shadow-xl flex flex-col gap-0.5">
+<div class="flex items-center gap-1.5 font-label-sm text-[10px] text-primary-container font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span>W8: 1,840 Pos (82%)</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-sm text-[10px] text-error">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+<span>W8: 210 Neg (18%)</span>
+</div>
+</div>
+</div>
+<!-- X-Axis Labels -->
+<div class="flex justify-between items-center px-1 font-label-sm text-label-sm text-on-surface-variant">
+<span>W1</span>
+<span>W2</span>
+<span>W3</span>
+<span>W4</span>
+<span>W5</span>
+<span>W6</span>
+<span>W7</span>
+<span class="text-primary font-semibold">W8</span>
+</div>
+</section>
+<!-- 5. VERBATIM EVIDENCE CAROUSEL -->
+<section class="flex flex-col gap-gutter-sm">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface">Verbatim Evidence</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high/60 text-on-surface-variant font-label-sm text-label-sm">Raw App Store Feed</span>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Quote 1 -->
+<div class="p-4 rounded-xl bg-surface-container/70 backdrop-blur-xl shadow-md flex flex-col gap-3 relative">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-error-container/30 text-error flex items-center justify-center font-headline-sm text-[12px] font-bold">
+                SK
+              </div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-[13px] text-on-surface leading-tight">Sarah K.</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">iOS 17.4.1 • iPhone 15 Pro</span>
+</div>
+</div>
+<!-- Star Rating (1 Star) -->
+<div class="flex items-center text-error">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px] opacity-25">star</span>
+<span class="material-symbols-outlined text-[16px] opacity-25">star</span>
+<span class="material-symbols-outlined text-[16px] opacity-25">star</span>
+<span class="material-symbols-outlined text-[16px] opacity-25">star</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic leading-snug">
+            “FaceID fails three times in a row since last Tuesday. Had to delete and reinstall twice just to log in.”
+          </p>
+</div>
+<!-- Quote 2 -->
+<div class="p-4 rounded-xl bg-surface-container/70 backdrop-blur-xl shadow-md flex flex-col gap-3 relative">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-primary-container/20 text-primary-container flex items-center justify-center font-headline-sm text-[12px] font-bold">
+                DP
+              </div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-[13px] text-on-surface leading-tight">DevP.</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Pro User • 3yr Subscriber</span>
+</div>
+</div>
+<!-- Star Rating (4 Stars) -->
+<div class="flex items-center text-primary-fixed-dim">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px] opacity-25">star</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic leading-snug">
+            “The new snappy animations are silky smooth, but please give us a Lock Screen widget for instant tracking!”
+          </p>
+</div>
+<!-- Quote 3 -->
+<div class="p-4 rounded-xl bg-surface-container/70 backdrop-blur-xl shadow-md flex flex-col gap-3 relative">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-tertiary-container/20 text-tertiary-fixed-dim flex items-center justify-center font-headline-sm text-[12px] font-bold">
+                MT
+              </div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-[13px] text-on-surface leading-tight">Marcus T.</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">iPadOS 17.5 • Daily Trader</span>
+</div>
+</div>
+<!-- Star Rating (5 Stars) -->
+<div class="flex items-center text-tertiary-fixed-dim">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic leading-snug">
+            “Went from a 2-star app to my daily driver. The latency drop on v3.8 is night and day!”
+          </p>
+</div>
+</div>
+</section>
+<!-- 6. ACTIONABLE STEPS PANEL (AI Recommendations Checklist) -->
+<section class="flex flex-col gap-gutter-sm">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface">AI Recommendations</span>
+<span class="flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container/20 text-secondary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+          Next Sprint Priorities
+        </span>
+</div>
+<div class="flex flex-col gap-2.5">
+<!-- Step 1 -->
+<div class="p-3.5 rounded-xl bg-surface-container/70 backdrop-blur-xl shadow-md flex items-start gap-3">
+<div class="mt-0.5 flex-shrink-0 w-6 h-6 rounded-md bg-error-container/40 text-error flex items-center justify-center font-label-sm text-label-sm font-bold">
+            1
+          </div>
+<div class="flex-1 flex flex-col gap-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<span class="font-headline-sm text-[14px] text-on-surface font-semibold truncate">Patch Biometric MFA Handshake</span>
+<span class="px-2 py-0.5 rounded-full bg-error-container/40 text-error font-label-sm text-[10px] font-semibold whitespace-nowrap">High Priority</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Reconcile timeout tokens for iOS 17.4+ background refresh.
+            </p>
+<div class="flex items-center gap-3 pt-1 font-label-sm text-label-sm text-on-surface">
+<span class="text-tertiary-fixed-dim font-medium">Impact: -12% 1-Star Risk</span>
+<span class="text-on-surface-variant">•</span>
+<span class="text-on-surface-variant">Sprint 44 Hotfix</span>
+</div>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="p-3.5 rounded-xl bg-surface-container/70 backdrop-blur-xl shadow-md flex items-start gap-3">
+<div class="mt-0.5 flex-shrink-0 w-6 h-6 rounded-md bg-primary-container/20 text-primary-container flex items-center justify-center font-label-sm text-label-sm font-bold">
+            2
+          </div>
+<div class="flex-1 flex flex-col gap-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<span class="font-headline-sm text-[14px] text-on-surface font-semibold truncate">Scope iOS Lock Screen Widget Spec</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-container/20 text-primary-container font-label-sm text-[10px] font-semibold whitespace-nowrap">Medium</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Deliver WidgetKit glanceable telemetry to neutralize competitor churn.
+            </p>
+<div class="flex items-center gap-3 pt-1 font-label-sm text-label-sm text-on-surface">
+<span class="text-primary-container font-medium">Impact: +0.3 NPS Target</span>
+<span class="text-on-surface-variant">•</span>
+<span class="text-on-surface-variant">Product Spec Ready</span>
+</div>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="p-3.5 rounded-xl bg-surface-container/70 backdrop-blur-xl shadow-md flex items-start gap-3">
+<div class="mt-0.5 flex-shrink-0 w-6 h-6 rounded-md bg-tertiary-container/20 text-tertiary-fixed-dim flex items-center justify-center font-label-sm text-label-sm font-bold">
+            3
+          </div>
+<div class="flex-1 flex flex-col gap-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<span class="font-headline-sm text-[14px] text-on-surface font-semibold truncate">Amplify Win in Release Notes</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-container/20 text-tertiary-fixed-dim font-label-sm text-[10px] font-semibold whitespace-nowrap">Quick Win</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Highlight v3.8 caching speedups in Store copy to capitalize on sentiment wave.
+            </p>
+<div class="flex items-center gap-3 pt-1 font-label-sm text-label-sm text-on-surface">
+<span class="text-tertiary-fixed-dim font-medium">Store Conversion Boost</span>
+<span class="text-on-surface-variant">•</span>
+<span class="text-on-surface-variant">Copy Drafted</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<script>
+  (function() {
+    const exportBtn = document.getElementById('export-report-btn');
+    if (exportBtn) {
+      exportBtn.addEventListener('click', () => {
+        const originalText = exportBtn.innerHTML;
+        exportBtn.innerHTML = '<span class="material-symbols-outlined text-[17px] animate-spin">sync</span><span>Sent!</span>';
+        setTimeout(() => {
+          exportBtn.innerHTML = originalText;
+        }, 2200);
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/85 backdrop-blur-2xl shadow-[0_-8px_32px_rgba(0,0,0,0.6)]" data-active-classes="text-primary-container drop-shadow-[0_0_12px_rgba(0,242,254,0.4)]"><div class="flex justify-around items-center h-16 px-gutter-sm"><a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[44px] transition-all group text-primary-container drop-shadow-[0_0_12px_rgba(0,242,254,0.4)]" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[22px] group-hover:scale-110 transition-transform">dashboard</span><span class="font-label-sm text-label-sm">Dashboard</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[44px] text-on-surface-variant transition-all hover:text-on-surface group" data-path="emerging-themes" href="#"><span class="material-symbols-outlined text-[22px] group-hover:scale-110 transition-transform">bubble_chart</span><span class="font-label-sm text-label-sm">Themes</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[44px] text-on-surface-variant transition-all hover:text-on-surface group" data-path="customer-quotes" href="#"><span class="material-symbols-outlined text-[22px] group-hover:scale-110 transition-transform">format_quote</span><span class="font-label-sm text-label-sm">Quotes</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[44px] text-on-surface-variant transition-all hover:text-on-surface group" data-path="ai-action-items" href="#"><span class="material-symbols-outlined text-[22px] group-hover:scale-110 transition-transform">bolt</span><span class="font-label-sm text-label-sm">Actions</span></a></div></nav></body></html>
