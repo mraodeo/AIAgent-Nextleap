@@ -1,0 +1,26 @@
+STDOUT:
+[START] Starting Groww App Review Pulse Agent...
+
+[1/4] Fetching recent reviews (weeks_back=8)...
+Fetching reviews since 2026-07-11...
+[SUCCESS] Fetched 50 reviews.
+
+[2/4] Analyzing reviews with Groq (LangChain)...
+Dynamically selected Groq model: openai/gpt-oss-20b
+Divided 50 reviews into 1 chunks to respect the 8K TPM limits.
+Processing chunk 1/1 (50 reviews)...
+[SUCCESS] Analysis complete.
+
+[3/5] Saving structured JSON for Frontend...
+[SUCCESS] Saved data.json to C:\Users\mange\Documents\AI Projects\AI Agent\src\..\frontend\public\data.json
+
+[4/5] Appending report to Google Docs via MCP...
+[SUCCESS] Docs Result: Successfully appended content to Google Doc: 1bN-Y5ufdfNL532_TcZE7XVfGCoxq1No1VBIGdOQMxTY
+
+[5/5] Drafting notification email via MCP...
+[SUCCESS] Email drafted successfully.
+
+[DONE] Pulse Agent workflow complete!
+
+
+STDERR:

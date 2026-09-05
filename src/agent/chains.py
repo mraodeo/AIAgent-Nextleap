@@ -11,7 +11,7 @@ from src.agent.prompts import pulse_prompt_template
 load_dotenv()
 
 # Groq specific limits requested by user
-GROQ_MODEL = "openai/gpt-oss-120b"
+GROQ_MODEL = "mixtral-8x7b-32768"
 RPM_LIMIT = 30 # Requests per minute
 RPD_LIMIT = 1000 # Requests per day
 TPM_LIMIT = 8000 # Tokens per minute
@@ -22,14 +22,45 @@ CHARS_PER_TOKEN = 3 # More conservative estimation
 MAX_CHARS_PER_REQUEST = 12000
 
 def get_llm():
-    """Returns the configured ChatGroq instance."""
+    """Returns the configured ChatGroq instance dynamically using an available model."""
     api_key = os.environ.get("GROQ_API_KEY")
     if not api_key:
         raise ValueError("GROQ_API_KEY environment variable is missing. Please add it to the .env file.")
         
+    # Dynamically find an available model instead of hardcoding one
+    try:
+        from groq import Groq
+        client = Groq(api_key=api_key)
+        models = client.models.list()
+        available_ids = {m.id for m in models.data}
+        
+        # Prioritized list of known models that support Tool Calling / Structured Output
+        prioritized_models = [
+            "openai/gpt-oss-20b",
+            "llama-3.3-70b-versatile",
+            "llama-3.3-70b-specdec",
+            "llama-3.1-70b-versatile",
+            "openai/gpt-oss-120b"
+        ]
+        
+        preferred = None
+        for model in prioritized_models:
+            if model in available_ids:
+                preferred = model
+                break
+                
+        if not preferred:
+            # Fallback to the first available model that isn't a whisper/safeguard model
+            preferred = next((m for m in available_ids if "whisper" not in m and "safeguard" not in m and "allam" not in m), "gemma2-9b-it")
+            
+        print(f"Dynamically selected Groq model: {preferred}")
+    except Exception as e:
+        print(f"Failed to fetch models dynamically, falling back to openai/gpt-oss-120b: {e}")
+        preferred = "openai/gpt-oss-120b"
+        
     return ChatGroq(
         groq_api_key=api_key,
-        model_name=GROQ_MODEL,
+        model_name=preferred,
         temperature=0.2, # Low temperature for analytical consistency
         max_retries=2
     )

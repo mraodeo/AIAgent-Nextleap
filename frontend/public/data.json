@@ -1,66 +1,136 @@
 {
   "metrics": {
-    "reviews_analyzed": 1224,
-    "total_in_window": 1879,
-    "dropped_praise": 655,
-    "signal_kept_percentage": 65.1,
-    "average_rating": 2.13,
+    "reviews_analyzed": 50,
+    "total_in_window": 75,
+    "dropped_praise": 15,
+    "signal_kept_percentage": 70.0,
+    "average_rating": 2.17,
     "rating_benchmark": 1.95,
-    "window_start": "2026-06-12",
-    "window_end": "2026-09-03",
-    "top_theme_share": 27,
-    "top_theme_name": "App stability after updates",
-    "top_theme_volume": 330,
-    "editorial_budget_used": 212,
-    "editorial_budget_max": 250,
-    "synthesis_model": "gemini-1.5-pro"
+    "window_start": "2026-07-11",
+    "window_end": "2026-09-05",
+    "top_theme_share": 50,
+    "top_theme_name": "Customer support and service q",
+    "top_theme_volume": 25,
+    "editorial_budget_used": 6000,
+    "editorial_budget_max": 200000,
+    "synthesis_model": "llama-3.x-8b"
   },
-  "themes": [
+  "sentiment_trend": [
     {
-      "rank": "01",
-      "name": "App stability after updates",
-      "description": "Users report missing features and stability issues following recent app updates.",
-      "volume": 330,
-      "rating": 1.95,
-      "negative_percentage": 68
+      "day": "Mon",
+      "score": 60
     },
     {
-      "rank": "02",
-      "name": "Customer support and withdrawal delays",
-      "description": "Users report unresponsive customer support calls and delays regarding money and accounts.",
-      "volume": 203,
-      "rating": 1.36,
-      "negative_percentage": 89
+      "day": "Tue",
+      "score": 43
     },
     {
-      "rank": "03",
-      "name": "KYC Verification Failures",
-      "description": "Users consistently report being stuck on the video KYC step, experiencing crashes or infinite loading.",
-      "volume": 185,
-      "rating": 1.5,
-      "negative_percentage": 92
+      "day": "Wed",
+      "score": 48
+    },
+    {
+      "day": "Thu",
+      "score": 39
+    },
+    {
+      "day": "Fri",
+      "score": 66
+    },
+    {
+      "day": "Sat",
+      "score": 47
+    },
+    {
+      "day": "Sun",
+      "score": 46
+    }
+  ],
+  "volume_trend": [
+    {
+      "day": "Mon",
+      "reviews": 7
+    },
+    {
+      "day": "Tue",
+      "reviews": 7
+    },
+    {
+      "day": "Wed",
+      "reviews": 6
+    },
+    {
+      "day": "Thu",
+      "reviews": 8
+    },
+    {
+      "day": "Fri",
+      "reviews": 7
+    },
+    {
+      "day": "Sat",
+      "reviews": 7
+    },
+    {
+      "day": "Sun",
+      "reviews": 8
     }
   ],
   "pulse_health": [
     {
-      "name": "themes_capped",
-      "value": "5",
+      "name": "Core Stability",
+      "value": "Healthy",
       "verified": true
     },
     {
-      "name": "themes clustered (max 5)",
-      "value": "3 in the note (need 3)",
+      "name": "User Sentiment",
+      "value": "Critical",
       "verified": true
     },
     {
-      "name": "quotes_verbatim",
-      "value": "3",
+      "name": "Support Volume",
+      "value": "High",
       "verified": true
     },
     {
-      "name": "quotes trace to stored review text",
-      "value": "3",
+      "name": "Feature Requests",
+      "value": "Moderate",
       "verified": true
     }
+  ],
+  "themes": [
+    {
+      "rank": "#1",
+      "name": "Customer support and service q",
+      "description": "Customer support and service quality",
+      "volume": 25,
+      "rating": 1.7,
+      "negative_percentage": 93
+    },
+    {
+      "rank": "#2",
+      "name": "App performance and bugs",
+      "description": "App performance and bugs",
+      "volume": 16,
+      "rating": 2.1,
+      "negative_percentage": 92
+    },
+    {
+      "rank": "#3",
+      "name": "Fees and charges",
+      "description": "Fees and charges",
+      "volume": 12,
+      "rating": 1.7,
+      "negative_percentage": 81
+    }
+  ],
+  "quotes": [
+    "the customer service is also not having any idea to resolve the issue.",
+    "order execution takes a lot more time than expected in 2-3 seconds 5 to 6 k loss occurred",
+    "High chrge app design user friendly but charge is very very high buy selling total profit suvaga"
+  ],
+  "actions": [
+    "Launch a ticket-based support portal with 24/7 live chat and defined response SLA.",
+    "Deploy a hotfix to address order execution delays and chart navigation glitches, followed by automated regression tests.",
+    "Conduct a fee audit and propose a tiered brokerage fee model to reduce perceived high costs."
   ]
 }

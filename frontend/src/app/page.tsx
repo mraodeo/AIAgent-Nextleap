@@ -37,6 +37,8 @@ interface PulseReport {
 
 export default function Dashboard() {
   const [data, setData] = useState<PulseReport | null>(null);
+  const [isExecuting, setIsExecuting] = useState(false);
+  const [executeStatus, setExecuteStatus] = useState<string | null>(null);
 
   useEffect(() => {
     fetch("/data.json")
@@ -57,6 +59,44 @@ export default function Dashboard() {
   }
 
   const { metrics, themes, pulse_health } = data;
+
+  const handleExport = () => {
+    const reportData = JSON.stringify(data, null, 2);
+    const blob = new Blob([reportData], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `review-pulse-report-${new Date().toISOString().split('T')[0]}.json`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  };
+
+  const handleExecute = async () => {
+    setIsExecuting(true);
+    setExecuteStatus("Initializing synthesis...");
+    
+    try {
+      const response = await fetch('/api/execute', { method: 'POST' });
+      const result = await response.json();
+      
+      if (response.ok) {
+        setExecuteStatus("Pipeline executed successfully!");
+        // Refresh data after a delay
+        setTimeout(() => window.location.reload(), 2000);
+      } else {
+        setExecuteStatus(`Execution failed: ${result.error || 'Check logs'}`);
+      }
+    } catch (error) {
+      setExecuteStatus("Error connecting to execution engine.");
+    } finally {
+      setTimeout(() => {
+        setIsExecuting(false);
+        setExecuteStatus(null);
+      }, 3000);
+    }
+  };
 
   return (
     <div className="flex h-screen overflow-hidden text-sm">
@@ -126,15 +166,28 @@ export default function Dashboard() {
             </div>
           </div>
 
-          <div className="flex items-center gap-4">
-            <button className="flex items-center gap-2 px-4 py-2 border border-[var(--color-border-strong)] hover:border-white hover:bg-[var(--color-bg-surface)] text-[var(--color-text-secondary)] hover:text-white rounded-lg transition-all font-medium">
+          <div className="flex items-center gap-4 relative">
+            {executeStatus && (
+              <div className="absolute -bottom-10 right-14 bg-[var(--color-bg-elevated)] border border-[var(--color-border-subtle)] text-[var(--color-accent-sage)] px-4 py-2 rounded-lg text-xs font-mono shadow-xl animate-fade-in whitespace-nowrap">
+                {executeStatus}
+              </div>
+            )}
+            <button 
+              onClick={handleExport}
+              className="flex items-center gap-2 px-4 py-2 border border-[var(--color-border-strong)] hover:border-white hover:bg-[var(--color-bg-surface)] text-[var(--color-text-secondary)] hover:text-white rounded-lg transition-all font-medium"
+            >
               <Download className="w-4 h-4" /> Export Report
             </button>
-            <button className="flex items-center gap-2 px-4 py-2 bg-[var(--color-text-primary)] hover:bg-white text-black rounded-lg transition-all font-medium shadow-[0_0_15px_rgba(255,255,255,0.15)]">
-              <Play className="w-4 h-4 fill-current" /> Execute Synthesis
+            <button 
+              onClick={handleExecute}
+              disabled={isExecuting}
+              className="flex items-center gap-2 px-4 py-2 bg-[var(--color-text-primary)] hover:bg-white text-black disabled:bg-gray-500 rounded-lg transition-all font-medium shadow-[0_0_15px_rgba(255,255,255,0.15)]"
+            >
+              {isExecuting ? <Activity className="w-4 h-4 animate-spin" /> : <Play className="w-4 h-4 fill-current" />}
+              {isExecuting ? 'Running...' : 'Execute Synthesis'}
             </button>
             <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[var(--color-accent-champagne)] to-orange-600 flex items-center justify-center text-xs font-bold text-white shadow-lg ml-2 border border-[var(--color-bg-base)]">
-              MK
+              MR
             </div>
           </div>
         </header>
