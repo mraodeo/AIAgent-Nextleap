@@ -40,22 +40,42 @@ export default function Dashboard() {
   const [isExecuting, setIsExecuting] = useState(false);
   const [executeStatus, setExecuteStatus] = useState<string | null>(null);
 
+  const [fetchError, setFetchError] = useState<string | null>(null);
+
   useEffect(() => {
     fetch("/api/data")
       .then((res) => res.json())
       .then((json) => {
-        if (!json.error) setData(json);
+        if (json.error) {
+           setFetchError(json.error);
+           // Set a default empty state so the dashboard still renders and allows execution
+           setData({
+             metrics: { reviews_analyzed: 0, total_in_window: 0, dropped_praise: 0, signal_kept_percentage: 0, average_rating: 0, rating_benchmark: 0, window_start: "-", window_end: "-", top_theme_share: 0, top_theme_name: "No Data", top_theme_volume: 0, editorial_budget_used: 0, editorial_budget_max: 200000, synthesis_model: "-" },
+             themes: [],
+             pulse_health: []
+           });
+        } else {
+           setData(json);
+        }
       })
-      .catch((err) => console.error("Failed to load data:", err));
+      .catch((err) => {
+         console.error("Failed to load data:", err);
+         setFetchError("Network error. Please check your backend connection.");
+      });
   }, []);
 
   if (!data) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[var(--color-bg-base)]">
+      <div className="min-h-screen flex flex-col items-center justify-center bg-[var(--color-bg-base)] gap-4">
         <div className="text-[var(--color-accent-champagne)] animate-pulse flex items-center gap-3 font-mono text-sm tracking-widest">
           <Activity className="w-5 h-5 animate-spin-slow" />
           [SYSTEM INITIALIZING]
         </div>
+        {fetchError && (
+          <div className="text-red-400 font-mono text-xs max-w-md text-center mt-4">
+            Error: {fetchError}
+          </div>
+        )}
       </div>
     );
   }
