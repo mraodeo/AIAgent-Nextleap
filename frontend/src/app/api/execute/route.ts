@@ -24,7 +24,8 @@ export async function POST() {
        // Write logs to a file so Antigravity can read them
        const fs = require('fs');
        const path = require('path');
-       fs.writeFileSync(path.join(process.cwd(), 'logs.txt'), `STDOUT:\n${stdout}\n\nSTDERR:\n${stderr}`);
+       const os = require('os');
+       fs.writeFileSync(path.join(os.tmpdir(), 'logs.txt'), `STDOUT:\n${stdout}\n\nSTDERR:\n${stderr}`);
        
        // Python catches the error and prints it, so we need to parse stdout for failures
        if (stdout.includes("Failed to append to docs") || stdout.includes("Failed to send email") || stdout.includes("No new reviews found")) {
@@ -36,7 +37,8 @@ export async function POST() {
        console.error("Python execution failed:", e);
        const fs = require('fs');
        const path = require('path');
-       fs.writeFileSync(path.join(process.cwd(), 'logs.txt'), `CRASH:\n${e.message}\n\nSTDOUT:\n${e.stdout || ''}\n\nSTDERR:\n${e.stderr || ''}`);
+       const os = require('os');
+       fs.writeFileSync(path.join(os.tmpdir(), 'logs.txt'), `CRASH:\n${e.message}\n\nSTDOUT:\n${e.stdout || ''}\n\nSTDERR:\n${e.stderr || ''}`);
        
        // Return the real error to the frontend
        return NextResponse.json(
