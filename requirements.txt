@@ -7,3 +7,5 @@ python-dotenv
 langdetect
 mcp
 schedule
+fastapi
+uvicorn

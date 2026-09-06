@@ -41,9 +41,11 @@ export default function Dashboard() {
   const [executeStatus, setExecuteStatus] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch("/data.json")
+    fetch("/api/data")
       .then((res) => res.json())
-      .then((json) => setData(json))
+      .then((json) => {
+        if (!json.error) setData(json);
+      })
       .catch((err) => console.error("Failed to load data:", err));
   }, []);
 

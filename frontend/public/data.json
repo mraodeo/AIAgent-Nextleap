@@ -4,12 +4,12 @@
     "total_in_window": 75,
     "dropped_praise": 15,
     "signal_kept_percentage": 70.0,
-    "average_rating": 2.79,
+    "average_rating": 2.03,
     "rating_benchmark": 1.95,
     "window_start": "2026-07-12",
     "window_end": "2026-09-06",
     "top_theme_share": 50,
-    "top_theme_name": "High brokerage/fees",
+    "top_theme_name": "Customer support dissatisfacti",
     "top_theme_volume": 25,
     "editorial_budget_used": 6000,
     "editorial_budget_max": 200000,
@@ -18,19 +18,19 @@
   "sentiment_trend": [
     {
       "day": "Mon",
-      "score": 55
+      "score": 57
     },
     {
       "day": "Tue",
-      "score": 54
+      "score": 41
     },
     {
       "day": "Wed",
-      "score": 51
+      "score": 55
     },
     {
       "day": "Thu",
-      "score": 39
+      "score": 40
     },
     {
       "day": "Fri",
@@ -38,17 +38,17 @@
     },
     {
       "day": "Sat",
-      "score": 56
+      "score": 55
     },
     {
       "day": "Sun",
-      "score": 39
+      "score": 49
     }
   ],
   "volume_trend": [
     {
       "day": "Mon",
-      "reviews": 7
+      "reviews": 6
     },
     {
       "day": "Tue",
@@ -56,7 +56,7 @@
     },
     {
       "day": "Wed",
-      "reviews": 8
+      "reviews": 5
     },
     {
       "day": "Thu",
@@ -64,7 +64,7 @@
     },
     {
       "day": "Fri",
-      "reviews": 6
+      "reviews": 7
     },
     {
       "day": "Sat",
@@ -72,7 +72,7 @@
     },
     {
       "day": "Sun",
-      "reviews": 7
+      "reviews": 6
     }
   ],
   "pulse_health": [
@@ -100,37 +100,37 @@
   "themes": [
     {
       "rank": "#1",
-      "name": "High brokerage/fees",
-      "description": "High brokerage/fees",
+      "name": "Customer support dissatisfacti",
+      "description": "Customer support dissatisfaction",
       "volume": 25,
-      "rating": 2.0,
-      "negative_percentage": 80
+      "rating": 1.6,
+      "negative_percentage": 76
     },
     {
       "rank": "#2",
-      "name": "Technical performance and data",
-      "description": "Technical performance and data accuracy",
+      "name": "Technical glitches and app per",
+      "description": "Technical glitches and app performance",
       "volume": 16,
-      "rating": 1.6,
-      "negative_percentage": 90
+      "rating": 2.3,
+      "negative_percentage": 72
     },
     {
       "rank": "#3",
-      "name": "Customer support responsivenes",
-      "description": "Customer support responsiveness",
+      "name": "High brokerage charges and hid",
+      "description": "High brokerage charges and hidden fees",
       "volume": 12,
-      "rating": 1.5,
-      "negative_percentage": 95
+      "rating": 2.5,
+      "negative_percentage": 70
     }
   ],
   "quotes": [
-    "awesome but your brokrage charge are very high",
-    "You are the biggest app of India but service is worst. Chart is not loading on different time frame on app and in PC too.",
-    "The customer care team is highly unprofessional. Employees like Ansh Agarwal constantly mute and disconnect calls ! Even after sending several emails with proof, the Groww managers/management take absolutely no action."
+    "Worst customer support. never take loans from here specially LAS",
+    "Chart is not loading on different time frame on app and in PC too. kindly work on thisat the earliest .",
+    "awesome but your brokrage charge are very high"
   ],
   "actions": [
-    "Reevaluate brokerage fee structure and consider lowering charges or offering fee\u2011free tiers for frequent traders, with clear communication in the app.",
-    "Deploy a dedicated technical task force to diagnose chart loading failures and data lag, and roll out a real\u2011time monitoring dashboard for market data accuracy.",
-    "Implement a structured support framework: introduce a ticketing system, set a 24\u2011hour response SLA, and provide staff training on dispute resolution."
+    "Deploy a dedicated support queue with an SLA of <2\u202fhours response and integrate a live\u2011chat bot for common queries.",
+    "Initiate a rapid bug\u2011fix sprint targeting chart rendering, permission handling, and login stability; release a hot\u2011fix within 48\u202fhours.",
+    "Conduct a fee\u2011benchmark study and roll out a tiered brokerage plan with clear disclosure to reduce perceived high charges."
   ]
 }

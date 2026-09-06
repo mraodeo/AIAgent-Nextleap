@@ -142,6 +142,7 @@ async def run_pulse_agent(weeks_back: int = 8, max_count: int = 50):
         print("[ERROR] Failed to draft email.\n")
         
     print("[DONE] Pulse Agent workflow complete!")
+    return frontend_data
 
 if __name__ == "__main__":
     asyncio.run(run_pulse_agent())
