@@ -177,9 +177,9 @@ export default function Dashboard() {
             <div className="flex items-center gap-3 font-mono text-[11px] text-[var(--color-text-secondary)]">
               <span className="flex items-center gap-1.5 bg-[var(--color-bg-surface)] px-3 py-1.5 rounded-md border border-[var(--color-border-subtle)]">
                 <Clock className="w-3 h-3" />
-                Q3 TRAILING
+                TRAILING WINDOW
               </span>
-              <span>12 JUN → 3 SEPT</span>
+              <span>{data?.metrics?.window_start || "-"} &rarr; {data?.metrics?.window_end || "-"}</span>
               
               <span className="flex items-center gap-1.5 bg-[var(--color-accent-sage-dim)] text-[var(--color-accent-sage)] px-3 py-1.5 rounded-md border border-[var(--color-accent-sage)]/30 ml-2 shadow-[0_0_10px_rgba(52,211,153,0.1)]">
                 <div className="w-1.5 h-1.5 bg-[var(--color-accent-sage)] rounded-full animate-pulse" />
