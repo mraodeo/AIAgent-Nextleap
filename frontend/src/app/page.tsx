@@ -19,6 +19,7 @@ interface PulseReport {
     editorial_budget_used: number;
     editorial_budget_max: number;
     synthesis_model: string;
+    last_sync_time?: string;
   };
   themes: {
     rank: string;
@@ -41,6 +42,7 @@ export default function Dashboard() {
   const [executeStatus, setExecuteStatus] = useState<string | null>(null);
 
   const [fetchError, setFetchError] = useState<string | null>(null);
+  const [activeTab, setActiveTab] = useState("Overview");
 
   useEffect(() => {
     fetch("/api/data")
@@ -139,13 +141,13 @@ export default function Dashboard() {
             Analytics Core
           </div>
           {[
-            { icon: PieChart, label: "Overview", active: true },
+            { icon: PieChart, label: "Overview" },
             { icon: Hash, label: "Narratives" },
             { icon: MessageSquare, label: "Raw Verbatims" },
             { icon: Activity, label: "Processing Logic" },
             { icon: Clock, label: "Execution Logs" },
           ].map((item, i) => (
-            <div key={i} className={`flex items-center gap-3 px-4 py-3 rounded-xl cursor-pointer transition-all ${item.active ? 'bg-[var(--color-accent-champagne-dim)] text-[var(--color-accent-champagne)] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)]' : 'text-[var(--color-text-secondary)] hover:bg-[var(--color-bg-elevated)] hover:text-white'}`}>
+            <div key={i} onClick={() => setActiveTab(item.label)} className={`flex items-center gap-3 px-4 py-3 rounded-xl cursor-pointer transition-all ${activeTab === item.label ? 'bg-[var(--color-accent-champagne-dim)] text-[var(--color-accent-champagne)] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)]' : 'text-[var(--color-text-secondary)] hover:bg-[var(--color-bg-elevated)] hover:text-white'}`}>
               <item.icon className="w-4 h-4" />
               <span className="font-medium tracking-wide">{item.label}</span>
             </div>
@@ -155,11 +157,17 @@ export default function Dashboard() {
         <div className="p-6 border-t border-[var(--color-border-subtle)] text-xs text-[var(--color-text-tertiary)] font-mono">
           <div className="flex justify-between items-center mb-3">
             <span className="text-white">SYS_STATUS</span>
-            <span className="text-[10px] text-[var(--color-accent-sage)] bg-[var(--color-accent-sage-dim)] border border-[var(--color-accent-sage)]/30 px-2 py-1 rounded-md">OPTIMAL</span>
+            <span className={`text-[10px] px-2 py-1 rounded-md border ${fetchError ? 'text-red-400 bg-red-400/10 border-red-400/30' : isExecuting ? 'text-yellow-400 bg-yellow-400/10 border-yellow-400/30' : 'text-[var(--color-accent-sage)] bg-[var(--color-accent-sage-dim)] border-[var(--color-accent-sage)]/30'}`}>
+              {fetchError ? 'OFFLINE' : isExecuting ? 'PROCESSING' : 'OPTIMAL'}
+            </span>
           </div>
           <div className="flex items-center justify-between">
              <span>LAST_SYNC</span>
-             <span className="text-white">8m ago</span>
+             <span className="text-white">
+               {data?.metrics?.last_sync_time 
+                 ? new Date(data.metrics.last_sync_time).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) 
+                 : 'Never'}
+             </span>
           </div>
         </div>
       </aside>
@@ -216,6 +224,8 @@ export default function Dashboard() {
 
         <div className="p-8 max-w-[1600px] mx-auto w-full space-y-6">
           
+          {activeTab === 'Overview' ? (
+            <>
           {/* KPI Grid (4 Cards) */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             
@@ -367,6 +377,14 @@ export default function Dashboard() {
             </div>
 
           </div>
+          </>
+          ) : (
+            <div className="flex flex-col items-center justify-center h-[60vh] opacity-50">
+              <Settings className="w-12 h-12 mb-4 text-[var(--color-text-tertiary)] animate-[spin_4s_linear_infinite]" />
+              <h2 className="text-xl font-medium text-white mb-2">{activeTab}</h2>
+              <p className="text-[var(--color-text-secondary)] font-mono text-sm">[ MODULE UNDER CONSTRUCTION ]</p>
+            </div>
+          )}
         </div>
       </main>
     </div>

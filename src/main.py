@@ -89,7 +89,8 @@ async def run_pulse_agent(weeks_back: int = 8, max_count: int = 50):
         "top_theme_volume": top_theme["volume"],
         "editorial_budget_used": reviews_analyzed * 120,
         "editorial_budget_max": 200000,
-        "synthesis_model": "llama-3.x-8b"
+        "synthesis_model": "llama-3.x-8b",
+        "last_sync_time": datetime.now().isoformat()
       },
       "sentiment_trend": [
         {"day": "Mon", "score": random.randint(40, 60)},
