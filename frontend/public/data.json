@@ -4,12 +4,12 @@
     "total_in_window": 75,
     "dropped_praise": 15,
     "signal_kept_percentage": 70.0,
-    "average_rating": 2.17,
+    "average_rating": 2.79,
     "rating_benchmark": 1.95,
-    "window_start": "2026-07-11",
-    "window_end": "2026-09-05",
+    "window_start": "2026-07-12",
+    "window_end": "2026-09-06",
     "top_theme_share": 50,
-    "top_theme_name": "Customer support and service q",
+    "top_theme_name": "High brokerage/fees",
     "top_theme_volume": 25,
     "editorial_budget_used": 6000,
     "editorial_budget_max": 200000,
@@ -18,15 +18,15 @@
   "sentiment_trend": [
     {
       "day": "Mon",
-      "score": 60
+      "score": 55
     },
     {
       "day": "Tue",
-      "score": 43
+      "score": 54
     },
     {
       "day": "Wed",
-      "score": 48
+      "score": 51
     },
     {
       "day": "Thu",
@@ -34,15 +34,15 @@
     },
     {
       "day": "Fri",
-      "score": 66
+      "score": 65
     },
     {
       "day": "Sat",
-      "score": 47
+      "score": 56
     },
     {
       "day": "Sun",
-      "score": 46
+      "score": 39
     }
   ],
   "volume_trend": [
@@ -52,27 +52,27 @@
     },
     {
       "day": "Tue",
-      "reviews": 7
+      "reviews": 8
     },
     {
       "day": "Wed",
-      "reviews": 6
+      "reviews": 8
     },
     {
       "day": "Thu",
-      "reviews": 8
+      "reviews": 7
     },
     {
       "day": "Fri",
-      "reviews": 7
+      "reviews": 6
     },
     {
       "day": "Sat",
-      "reviews": 7
+      "reviews": 6
     },
     {
       "day": "Sun",
-      "reviews": 8
+      "reviews": 7
     }
   ],
   "pulse_health": [
@@ -100,37 +100,37 @@
   "themes": [
     {
       "rank": "#1",
-      "name": "Customer support and service q",
-      "description": "Customer support and service quality",
+      "name": "High brokerage/fees",
+      "description": "High brokerage/fees",
       "volume": 25,
-      "rating": 1.7,
-      "negative_percentage": 93
+      "rating": 2.0,
+      "negative_percentage": 80
     },
     {
       "rank": "#2",
-      "name": "App performance and bugs",
-      "description": "App performance and bugs",
+      "name": "Technical performance and data",
+      "description": "Technical performance and data accuracy",
       "volume": 16,
-      "rating": 2.1,
-      "negative_percentage": 92
+      "rating": 1.6,
+      "negative_percentage": 90
     },
     {
       "rank": "#3",
-      "name": "Fees and charges",
-      "description": "Fees and charges",
+      "name": "Customer support responsivenes",
+      "description": "Customer support responsiveness",
       "volume": 12,
-      "rating": 1.7,
-      "negative_percentage": 81
+      "rating": 1.5,
+      "negative_percentage": 95
     }
   ],
   "quotes": [
-    "the customer service is also not having any idea to resolve the issue.",
-    "order execution takes a lot more time than expected in 2-3 seconds 5 to 6 k loss occurred",
-    "High chrge app design user friendly but charge is very very high buy selling total profit suvaga"
+    "awesome but your brokrage charge are very high",
+    "You are the biggest app of India but service is worst. Chart is not loading on different time frame on app and in PC too.",
+    "The customer care team is highly unprofessional. Employees like Ansh Agarwal constantly mute and disconnect calls ! Even after sending several emails with proof, the Groww managers/management take absolutely no action."
   ],
   "actions": [
-    "Launch a ticket-based support portal with 24/7 live chat and defined response SLA.",
-    "Deploy a hotfix to address order execution delays and chart navigation glitches, followed by automated regression tests.",
-    "Conduct a fee audit and propose a tiered brokerage fee model to reduce perceived high costs."
+    "Reevaluate brokerage fee structure and consider lowering charges or offering fee\u2011free tiers for frequent traders, with clear communication in the app.",
+    "Deploy a dedicated technical task force to diagnose chart loading failures and data lag, and roll out a real\u2011time monitoring dashboard for market data accuracy.",
+    "Implement a structured support framework: introduce a ticketing system, set a 24\u2011hour response SLA, and provide staff training on dispute resolution."
   ]
 }

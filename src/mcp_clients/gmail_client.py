@@ -21,9 +21,9 @@ async def draft_pulse_email(summary: str) -> bool:
 
     try:
         async with get_mcp_session() as session:
-            # We call the 'send_email' tool exposed by the remote MCP server
+            # We call the 'draft_email' tool exposed by the remote MCP server
             result = await session.call_tool(
-                "send_email", 
+                "draft_email", 
                 arguments={
                     "to": target_email, 
                     "subject": subject,
@@ -32,5 +32,5 @@ async def draft_pulse_email(summary: str) -> bool:
             )
             return True
     except Exception as e:
-        print(f"Failed to send email: {e}")
+        print(f"Failed to draft email: {e}")
         return False

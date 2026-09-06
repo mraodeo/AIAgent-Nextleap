@@ -11,10 +11,18 @@ export async function POST() {
     // the root 'src/main.py' is one level up.
     const pythonScriptPath = path.resolve(process.cwd(), '../src/main.py');
     
-    // Use the virtual environment's Python executable if on Windows
-    const venvPythonPath = path.resolve(process.cwd(), '../venv/Scripts/python.exe');
-    // Fallback to system python if not found, but we'll try the venv first.
-    const command = `"${venvPythonPath}" "${pythonScriptPath}"`;
+    // Use the virtual environment's Python executable if on Windows, otherwise use system python3
+    const isWindows = process.platform === 'win32';
+    let command;
+    
+    if (isWindows) {
+      const venvPythonPath = path.resolve(process.cwd(), '../venv/Scripts/python.exe');
+      command = `"${venvPythonPath}" "${pythonScriptPath}"`;
+    } else {
+      // For Vercel (Linux), use python3. 
+      // Note: Vercel's Node environment has python3, but dependencies must be installed.
+      command = `python3 "${pythonScriptPath}"`;
+    }
     
     try {
        const { stdout, stderr } = await execAsync(command);
